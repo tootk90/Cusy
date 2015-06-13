@@ -5,13 +5,10 @@
 #include "headers/mappa.h"
 
 //prova?
-<<<<<<< HEAD
+
+int cazzosincronizzati;
 
 
-
-
-=======
->>>>>>> origin/master
 void game()
 {
 	Personaggio eroe, nemico;
