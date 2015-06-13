@@ -2,7 +2,6 @@
 *.suo
 *.obj
 *.log
-*.exe
 *.tlog
 *.lastbuildstate
 *.ilk
