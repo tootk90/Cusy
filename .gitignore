@@ -3,3 +3,7 @@ Cusy/Cusy.v12.suo
 *.sdf
 Cusy/Cusy.vcxproj
 *.ilk
+*.tlog
+*.vcxproj
+*.d
+*.mk
