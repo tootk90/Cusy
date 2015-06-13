@@ -3,6 +3,19 @@
 
 # Custom for Visual Studio
 *.cs     diff=csharp
+*.suo
+*.vcxproj
+*.filters
+*.sdf
+*.obj
+*.pdb
+*.log
+*.tlog
+*.ilk
+*.exe
+*.o
+*.d
+
 
 # Standard to msysgit
 *.doc	 diff=astextplain
