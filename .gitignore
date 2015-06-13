@@ -7,3 +7,15 @@ Cusy/Cusy.vcxproj
 *.vcxproj
 *.d
 *.mk
+*.suo
+*.vcxproj
+*.filters
+*.sdf
+*.obj
+*.pdb
+*.log
+*.tlog
+*.ilk
+*.exe
+*.o
+*.d
