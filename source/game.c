@@ -16,7 +16,7 @@ void game()
 	
 	
 	generaStat(&eroe);
-	printf("inserisci il nome del tuo eroe : ");
+	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
 	fgets(eroe.nome, 20, stdin);
 	

@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\main.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\mappa.c">
-      <Filter>File di origine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\azioni.c">
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="..\source\game.c">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\azioni.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\main.c">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\headers\game.h">
+    <ClInclude Include="..\headers\type.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\mappa.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\type.h">
+    <ClInclude Include="..\headers\game.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\azioni.h">
