@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "headers/type.h"
-#include "headers/mappa.h"
+#include "..\headers\type.h"
+#include "..\headers\mappa.h"
 
 int currentPosition;
 int thereIsEnemy;

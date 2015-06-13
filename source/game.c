@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "headers/type.h"
-#include "headers/azioni.h"
-#include "headers/mappa.h"
+#include "..\headers\type.h"
+#include "..\headers\azioni.h"
+#include "..\headers\mappa.h"
 
 //prova?
 
