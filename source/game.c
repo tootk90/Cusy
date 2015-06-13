@@ -5,10 +5,13 @@
 #include "headers/mappa.h"
 
 //prova?
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> origin/master
 void game()
 {
 	Personaggio eroe, nemico;
