@@ -1,0 +1,1 @@
+./Release/source_azioni.c.o ./Release/source_game.c.o ./Release/source_main.c.o ./Release/source_mappa.c.o   
