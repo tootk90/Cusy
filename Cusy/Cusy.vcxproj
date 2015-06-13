@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{544B2F9A-B997-480F-9C82-5D247959AC6A}</ProjectGuid>
-    <RootNamespace>CusiRPG</RootNamespace>
+    <ProjectGuid>{4BA3E839-25BC-45C5-95B8-DE8564A3D74C}</ProjectGuid>
+    <RootNamespace>Cusy</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,16 +64,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\azioni.c" />
-    <ClCompile Include="..\..\source\game.c" />
-    <ClCompile Include="..\..\source\main.c" />
-    <ClCompile Include="..\..\source\mappa.c" />
+    <ClCompile Include="..\source\azioni.c" />
+    <ClCompile Include="..\source\game.c" />
+    <ClCompile Include="..\source\main.c" />
+    <ClCompile Include="..\source\mappa.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\headers\azioni.h" />
-    <ClInclude Include="..\..\headers\game.h" />
-    <ClInclude Include="..\..\headers\mappa.h" />
-    <ClInclude Include="..\..\headers\type.h" />
+    <ClInclude Include="..\headers\azioni.h" />
+    <ClInclude Include="..\headers\game.h" />
+    <ClInclude Include="..\headers\mappa.h" />
+    <ClInclude Include="..\headers\type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,30 +15,30 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\main.c">
+    <ClCompile Include="..\source\main.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\mappa.c">
+    <ClCompile Include="..\source\mappa.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\azioni.c">
+    <ClCompile Include="..\source\azioni.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\game.c">
+    <ClCompile Include="..\source\game.c">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\headers\game.h">
+    <ClInclude Include="..\headers\game.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\headers\mappa.h">
+    <ClInclude Include="..\headers\mappa.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\headers\type.h">
+    <ClInclude Include="..\headers\type.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\headers\azioni.h">
+    <ClInclude Include="..\headers\azioni.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
