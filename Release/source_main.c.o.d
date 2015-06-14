@@ -1,6 +1,5 @@
-Release/source_main.c.o: source/main.c source/..\headers\game.h \
- source/..\headers\type.h
+Release/source_main.c.o: source/main.c source/game.h source/type.h
 
-source/..\headers\game.h:
+source/game.h:
 
-source/..\headers\type.h:
+source/type.h:

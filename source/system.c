@@ -1,10 +1,14 @@
 #ifdef linux
-	#include "system.h"
+    #include "termios.h"
+    #include "stdio.h"
+    #include "system.h"
+    
 
 
 	int getch() {
 		struct termios oldtc, newtc;
 		int ch;
+        int STDIN_FILENO = 0;
 		tcgetattr(STDIN_FILENO, &oldtc);
 		newtc = oldtc;
 		newtc.c_lflag &= ~(ICANON | ECHO);
