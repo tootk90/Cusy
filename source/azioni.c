@@ -8,6 +8,14 @@
 #include "type.h"
 #include "mappa.h"
 
+#ifdef linux
+char clear[] = "clear";
+#endif // linux
+
+#ifdef _WIN32
+char clear[] = "cls";
+#endif // _WIN32
+
 
 char direzione;
 
@@ -74,13 +82,14 @@ void movement(void){
     
 void checkFight(Personaggio *nemico, Personaggio *eroe){
     if(thereIsEnemy == 1){
-        system("cls"); //clear su osx e cls su win
+        system(clear); //clear su osx e cls su win
         printf("\nIn questa stanza e' presente %s...", nemico->nome);
         if(nemico->vita > 1){
             printf("che non ha buone intenzioni\n\n");
             startFIght(nemico, *eroe);
             
-            }else{
+            }
+		else{
                 printf("che e' in fin di vita,\n e ti lascia proseguire\n\n");
                 }
         }
@@ -96,20 +105,23 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
 void startFIght(Personaggio *nemico, Personaggio eroe){
     char a;
     printf("Inizia una lotta tra %s e %s!\n"
-            "Premi 'k' seguito da invio per attaccare.\n"
+            "Premi 'k' per attaccare.\n"
             "Le tue stat sono: %d HP\n"
             "                  %d ATK\n\n\n",eroe.nome, nemico->nome, eroe.vita, eroe.atk);
     while(isAlive(*nemico) && isAlive(eroe)){
-        scanf("%c", &a);
+        a = getch();
         fflush(stdin);
         
-        if(a=='k'){
+        if( a == 'k'){
             attack(eroe, nemico);
-            }
-        attack(*nemico, &eroe);
         }
+			attack(*nemico, &eroe);
+        }
+
     if(isDead(eroe)){
-        printf("HAI PERSO miseramente\n");
+        
+		printf("HAI PERSO miseramente\n");
+		system("pause");
         exit(0);
         }
     
