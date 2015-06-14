@@ -90,12 +90,6 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="headers">
-    <File Name="headers/azioni.h"/>
-    <File Name="headers/game.h"/>
-    <File Name="headers/mappa.h"/>
-    <File Name="headers/type.h"/>
-  </VirtualDirectory>
   <VirtualDirectory Name="source">
     <File Name="source/azioni.c"/>
     <File Name="source/game.c"/>
@@ -103,6 +97,10 @@
     <File Name="source/mappa.c"/>
     <File Name="source/system.c"/>
     <File Name="source/system.h"/>
+    <File Name="source/azioni.h"/>
+    <File Name="source/game.h"/>
+    <File Name="source/mappa.h"/>
+    <File Name="source/type.h"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

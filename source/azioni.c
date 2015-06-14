@@ -7,6 +7,7 @@
 #include "azioni.h"
 #include "type.h"
 #include "mappa.h"
+#include "system.h"
 
 #ifdef linux
 char clear[] = "clear";
@@ -113,11 +114,11 @@ void startFIght(Personaggio *nemico, Personaggio eroe){
         fflush(stdin);
         
         if( a == 'k'){
-            attack(eroe, nemico);
+           attack(eroe, nemico);
         }
-			attack(*nemico, &eroe);
-        }
-
+    
+    attack(*nemico, &eroe);
+    }
     if(isDead(eroe)){
         
 		printf("HAI PERSO miseramente\n");

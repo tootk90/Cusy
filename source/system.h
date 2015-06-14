@@ -1,3 +1,8 @@
-#include <termios.h>
+#ifndef SYSTEM_H
+#define SYSTEM_H
+    #ifdef linux
+    #include <termios.h>
 
-int getch();
+    int getch();
+    #endif
+ #endif
