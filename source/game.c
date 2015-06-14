@@ -37,7 +37,7 @@ void game()
     while(1){
 
     movement();   
-    showRoom();
+  //  showRoom();
     checkFight(&nemico, eroe);
     if(currentPosition == 13){
         break;
