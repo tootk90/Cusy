@@ -15,7 +15,8 @@ void game()
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
-	gets(eroe.nome);
+	scanf("%s", eroe.nome);
+    fflush(stdin);
 	
 	nemico.nome = "La Cusimano";
 	generaStat(&nemico);

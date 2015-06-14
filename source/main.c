@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     intro();
     game();
 	
-	system("pause");
+	//system("pause");
 	
 	return 0;
 }

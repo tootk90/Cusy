@@ -101,6 +101,8 @@
     <File Name="source/game.c"/>
     <File Name="source/main.c"/>
     <File Name="source/mappa.c"/>
+    <File Name="source/system.c"/>
+    <File Name="source/system.h"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

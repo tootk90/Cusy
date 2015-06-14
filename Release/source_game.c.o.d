@@ -1,11 +1,8 @@
-Release/source_game.c.o: source/game.c source/..\headers\type.h \
- source/..\headers\azioni.h source/..\headers\type.h \
- source/..\headers\mappa.h
+Release/source_game.c.o: source/game.c source/type.h source/azioni.h \
+ source/mappa.h
 
-source/..\headers\type.h:
+source/type.h:
 
-source/..\headers\azioni.h:
+source/azioni.h:
 
-source/..\headers\type.h:
-
-source/..\headers\mappa.h:
+source/mappa.h:
