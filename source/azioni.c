@@ -7,6 +7,9 @@
 #include "azioni.h"
 #include "type.h"
 #include "mappa.h"
+#include "system.h"
+
+
 
 #ifdef linux
 char clear[] = "clear";
