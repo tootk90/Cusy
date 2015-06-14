@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "..\headers\azioni.h"
-#include "..\headers\type.h"
-#include "..\headers\mappa.h"
+
+
+
+#include "azioni.h"
+#include "type.h"
+#include "mappa.h"
 
 
 char direzione;
