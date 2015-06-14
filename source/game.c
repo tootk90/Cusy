@@ -4,9 +4,6 @@
 #include "..\headers\azioni.h"
 #include "..\headers\mappa.h"
 
-//prova?
-
-int cazzosincronizzati;
 
 
 void game()
@@ -18,7 +15,7 @@ void game()
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
-	fgets(eroe.nome, 20, stdin);
+	gets(eroe.nome);
 	
 	nemico.nome = "La Cusimano";
 	generaStat(&nemico);
