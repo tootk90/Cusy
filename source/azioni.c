@@ -7,6 +7,7 @@
 #include "azioni.h"
 #include "type.h"
 #include "mappa.h"
+#include "system.h"
 
 
 char direzione;
@@ -74,7 +75,7 @@ void movement(void){
     
 void checkFight(Personaggio *nemico, Personaggio *eroe){
     if(thereIsEnemy == 1){
-        system("cls"); //clear su osx e cls su win
+       // system("cls"); //clear su osx e cls su win
         printf("\nIn questa stanza e' presente %s...", nemico->nome);
         if(nemico->vita > 1){
             printf("che non ha buone intenzioni\n\n");

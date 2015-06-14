@@ -1,8 +1,5 @@
-Release/source_mappa.c.o: source/mappa.c source/..\headers\type.h \
- source/..\headers\mappa.h source/..\headers\type.h
+Release/source_mappa.c.o: source/mappa.c source/type.h source/mappa.h
 
-source/..\headers\type.h:
+source/type.h:
 
-source/..\headers\mappa.h:
-
-source/..\headers\type.h:
+source/mappa.h:

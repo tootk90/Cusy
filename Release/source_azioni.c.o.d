@@ -1,11 +1,10 @@
-Release/source_azioni.c.o: source/azioni.c source/..\headers\azioni.h \
- source/..\headers\type.h source/..\headers\type.h \
- source/..\headers\mappa.h
+Release/source_azioni.c.o: source/azioni.c source/azioni.h source/type.h \
+ source/mappa.h source/system.h
 
-source/..\headers\azioni.h:
+source/azioni.h:
 
-source/..\headers\type.h:
+source/type.h:
 
-source/..\headers\type.h:
+source/mappa.h:
 
-source/..\headers\mappa.h:
+source/system.h:
