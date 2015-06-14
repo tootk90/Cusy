@@ -32,7 +32,7 @@ Room stanze[45] = {
     {"Pianerottolo", 0},       //21
     {"Dipart. di fisica", 0},  //22
     {"Dipart. di fisica", 0},  //23
-    {"Uffici Dipart.", 0},     //24
+    {"Uffici Dipart.", 2},     //24
     {"Scala", 0},              //25
     {"Scala", 0},              //26
     {"Scala", 0},              //27

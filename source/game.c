@@ -23,6 +23,7 @@ void game()
 	nemico.nome = "La Cusimano";
 	generaStat(&nemico);
     nemico.vita = 100;
+    showStat(eroe);
 	
 	
     showRoom();
@@ -38,7 +39,7 @@ void game()
 
     movement();   
   //  showRoom();
-    checkFight(&nemico, eroe);
+    checkFight(&nemico, &eroe);
     if(currentPosition == 13){
         break;
         }
