@@ -7,6 +7,6 @@
     void attack(Personaggio a, Personaggio *b);
     int isAlive(Personaggio a);
     void movement(void);
-    void checkFight(Personaggio *nemico, Personaggio eroe);
+    void checkFight(Personaggio *nemico, Personaggio *eroe);
     void startFIght(Personaggio *nemico, Personaggio eroe);
 #endif
