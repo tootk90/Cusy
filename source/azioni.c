@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "..\headers\azioni.h"
-#include "..\headers\type.h"
-#include "..\headers\mappa.h"
+
+
+
+#include "azioni.h"
+#include "type.h"
+#include "mappa.h"
 
 
 char direzione;
@@ -50,24 +53,24 @@ int isDead(Personaggio a){
     
 
 void movement(void){
-        scanf("%c", &direzione);
-        fflush(stdin);
-        switch(direzione){
-            case 'w':
-                up();
-                break;
-                
-            case 's':
-                down();
-                break;
-            case 'd':
-                right();
-                break;
-            case 'a':
-                left();
-                break;
-            }
-    }
+	direzione = getch();
+    fflush(stdin);
+
+	switch(direzione){
+		case 'w':
+			up();
+            break;
+		case 's':
+			down();
+            break;
+		case 'd':
+            right();
+            break;
+        case 'a':
+            left();
+            break;
+        }
+}
     
 void checkFight(Personaggio *nemico, Personaggio *eroe){
     if(thereIsEnemy == 1){

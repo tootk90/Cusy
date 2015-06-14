@@ -1,5 +1,5 @@
 #ifdef linux
-	#include "..\headers\system.h"
+	#include "system.h"
 
 
 	int getch() {
