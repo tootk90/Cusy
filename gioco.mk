@@ -5,15 +5,15 @@
 ## Release
 ProjectName            :=gioco
 ConfigurationName      :=Release
-WorkspacePath          := "C:\Users\Salvatore\OneDrive\dev\programmi_c"
-ProjectPath            := "C:\Users\Salvatore\Desktop\dev\Cusy"
+WorkspacePath          := "C:\Users\salvatore\OneDrive\dev\programmi_c"
+ProjectPath            := "C:\Users\salvatore\Desktop\dev\Cusy"
 IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Salvatore
-Date                   :=13/06/2015
+Date                   :=14/06/2015
 CodeLitePath           :="E:\programmi\CodeLite"
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -90,7 +90,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/source_azioni.c$(ObjectSuffix): source/azioni.c $(IntermediateDirectory)/source_azioni.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Salvatore/Desktop/dev/Cusy/source/azioni.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/azioni.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_azioni.c$(DependSuffix): source/azioni.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_azioni.c$(DependSuffix) -MM "source/azioni.c"
 
@@ -98,7 +98,7 @@ $(IntermediateDirectory)/source_azioni.c$(PreprocessSuffix): source/azioni.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_azioni.c$(PreprocessSuffix) "source/azioni.c"
 
 $(IntermediateDirectory)/source_game.c$(ObjectSuffix): source/game.c $(IntermediateDirectory)/source_game.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Salvatore/Desktop/dev/Cusy/source/game.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_game.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/game.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_game.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_game.c$(DependSuffix): source/game.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_game.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_game.c$(DependSuffix) -MM "source/game.c"
 
@@ -106,7 +106,7 @@ $(IntermediateDirectory)/source_game.c$(PreprocessSuffix): source/game.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_game.c$(PreprocessSuffix) "source/game.c"
 
 $(IntermediateDirectory)/source_main.c$(ObjectSuffix): source/main.c $(IntermediateDirectory)/source_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Salvatore/Desktop/dev/Cusy/source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_main.c$(DependSuffix): source/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_main.c$(DependSuffix) -MM "source/main.c"
 
@@ -114,7 +114,7 @@ $(IntermediateDirectory)/source_main.c$(PreprocessSuffix): source/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_main.c$(PreprocessSuffix) "source/main.c"
 
 $(IntermediateDirectory)/source_mappa.c$(ObjectSuffix): source/mappa.c $(IntermediateDirectory)/source_mappa.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Salvatore/Desktop/dev/Cusy/source/mappa.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/mappa.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_mappa.c$(DependSuffix): source/mappa.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_mappa.c$(DependSuffix) -MM "source/mappa.c"
 

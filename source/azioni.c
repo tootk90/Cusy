@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "..\headers\azioni.h"
-#include "..\headers\type.h"
-#include "..\headers\mappa.h"
+
+
+
+#include "azioni.h"
+#include "type.h"
+#include "mappa.h"
 
 
 char direzione;
@@ -50,36 +53,43 @@ int isDead(Personaggio a){
     
 
 void movement(void){
-        scanf("%c", &direzione);
-        fflush(stdin);
-        switch(direzione){
-            case 'w':
-                up();
-                break;
-                
-            case 's':
-                down();
-                break;
-            case 'd':
-                right();
-                break;
-            case 'a':
-                left();
-                break;
-            }
-    }
+	direzione = getch();
+    fflush(stdin);
+
+	switch(direzione){
+		case 'w':
+			up();
+            break;
+		case 's':
+			down();
+            break;
+		case 'd':
+            right();
+            break;
+        case 'a':
+            left();
+            break;
+        }
+}
     
-void checkFight(Personaggio *nemico, Personaggio eroe){
+void checkFight(Personaggio *nemico, Personaggio *eroe){
     if(thereIsEnemy == 1){
         system("cls"); //clear su osx e cls su win
         printf("\nIn questa stanza e' presente %s...", nemico->nome);
         if(nemico->vita > 1){
             printf("che non ha buone intenzioni\n\n");
-            startFIght(nemico, eroe);
+            startFIght(nemico, *eroe);
             
             }else{
                 printf("che e' in fin di vita,\n e ti lascia proseguire\n\n");
                 }
+        }
+    if(thereIsEnemy == 2){
+        printf("\nIn questa stanza e' presente il Prof. Fazio che ti Regala 50HP!\n");
+        
+        eroe->vita += 50;
+        showStat(*eroe);
+        
         }
     }
     

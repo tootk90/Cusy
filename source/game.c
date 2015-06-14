@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "..\headers\type.h"
-#include "..\headers\azioni.h"
-#include "..\headers\mappa.h"
+#include "type.h"
+#include "azioni.h"
+#include "mappa.h"
 
-//prova?
-
-int cazzosincronizzati;
 
 
 void game()
@@ -18,11 +15,12 @@ void game()
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
-	fgets(eroe.nome, 20, stdin);
+	gets(eroe.nome);
 	
 	nemico.nome = "La Cusimano";
 	generaStat(&nemico);
     nemico.vita = 100;
+    showStat(eroe);
 	
 	
     showRoom();
@@ -37,8 +35,8 @@ void game()
     while(1){
 
     movement();   
-    showRoom();
-    checkFight(&nemico, eroe);
+  //  showRoom();
+    checkFight(&nemico, &eroe);
     if(currentPosition == 13){
         break;
         }

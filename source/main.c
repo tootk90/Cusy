@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "..\headers\game.h"
+#include "game.h"
 
 
-//MI DICE CHE NON TROVA game.h
+
 
 
 int main(int argc, char **argv)
