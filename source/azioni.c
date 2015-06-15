@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-
-
+#include <conio.h>
 
 #include "azioni.h"
 #include "type.h"
 #include "mappa.h"
-#include "system.h"
 
+#ifdef linux
+#include "system.h"
+#endif
 
 
 #ifdef linux
@@ -64,7 +65,7 @@ int isDead(Personaggio a){
     
 
 void movement(void){
-	direzione = getch();
+	direzione = _getch();
     fflush(stdin);
 
 	switch(direzione){
@@ -112,7 +113,7 @@ void startFIght(Personaggio *nemico, Personaggio eroe){
             "Le tue stat sono: %d HP\n"
             "                  %d ATK\n\n\n",eroe.nome, nemico->nome, eroe.vita, eroe.atk);
     while(isAlive(*nemico) && isAlive(eroe)){
-        a = getch();
+        a = _getch();
         fflush(stdin);
         
         if( a == 'k'){

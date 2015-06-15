@@ -72,10 +72,10 @@
     <ClCompile Include="..\source\mappa.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\headers\azioni.h" />
-    <ClInclude Include="..\headers\game.h" />
-    <ClInclude Include="..\headers\mappa.h" />
-    <ClInclude Include="..\headers\type.h" />
+    <ClInclude Include="..\source\azioni.h" />
+    <ClInclude Include="..\source\game.h" />
+    <ClInclude Include="..\source\mappa.h" />
+    <ClInclude Include="..\source\system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

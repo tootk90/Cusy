@@ -36,7 +36,9 @@ void game()
 
     movement();   
   //  showRoom();
+	GenerateEnemies();
     checkFight(&nemico, &eroe);
+
     if(currentPosition == 13){
         break;
         }
