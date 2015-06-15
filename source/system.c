@@ -5,7 +5,7 @@
     
 
 
-	int getch() {
+	int _getch() {
 		struct termios oldtc, newtc;
 		int ch;
         int STDIN_FILENO = 0;

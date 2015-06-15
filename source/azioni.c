@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <conio.h>
+
 
 #include "azioni.h"
 #include "type.h"
@@ -19,6 +19,7 @@ char clear[] = "clear";
 
 #ifdef _WIN32
 char clear[] = "cls";
+#include <conio.h>
 #endif // _WIN32
 
 
@@ -127,7 +128,7 @@ void startFIght(Personaggio *nemico, Personaggio eroe){
     if(isDead(eroe)){
         
 		printf("HAI PERSO miseramente\n");
-		system("pause");
+		getchar();  //tipo system(pause)
         exit(0);
         }
     

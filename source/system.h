@@ -3,6 +3,6 @@
     #ifdef linux
     #include <termios.h>
 
-    int getch();
+    int _getch();
     #endif
  #endif
