@@ -3,6 +3,7 @@
     #include "type.h"
     extern int currentPosition;
     extern int thereIsEnemy;
+	extern int flagFazio;
 
     void move(int dir);
     void describe(Room room);

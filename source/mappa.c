@@ -4,6 +4,7 @@
 
 int currentPosition;
 int thereIsEnemy;
+int flagFazio = 1;
 
 
 

@@ -82,6 +82,7 @@ void movement(void){
 }
     
 void checkFight(Personaggio *nemico, Personaggio *eroe){
+	
     if(thereIsEnemy == 1){
         system(clear); //clear su osx e cls su win
         printf("\nIn questa stanza e' presente %s...", nemico->nome);
@@ -94,9 +95,9 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
                 printf("che e' in fin di vita,\n e ti lascia proseguire\n\n");
                 }
         }
-    if(thereIsEnemy == 2){
+    if(thereIsEnemy == 2 && flagFazio == 1){
         printf("\nIn questa stanza e' presente il Prof. Fazio che ti Regala 50HP!\n");
-        
+       flagFazio = 0;
         eroe->vita += 50;
         showStat(*eroe);
         
