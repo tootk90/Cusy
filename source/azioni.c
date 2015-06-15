@@ -108,9 +108,43 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
         
         }
 	if(thereIsEnemy == 3 && flagVincent == 1){
-        printf("\nIn questa stanza e' presente Vincent che ti porta nel suo ufficio\n"
-					"...per parlare\n");
-       flagVincent = 0;
+		char ans;
+		int luck;
+        printf("\nIn questa stanza e' presente la Stagliano' che ti chiede di seguirla nel suo ufficio\n"
+					"...per parlare...\n"
+					"Vuoi seguirla? (S/N)");
+		scanf("%c", &ans);
+		if (ans == 'S' || ans == 's'){
+			luck = rand() % 2;
+			switch (luck) {
+				case 0:
+					system(clear);
+					getchar();
+					printf("...");
+					getchar();
+					printf("\nSi sentono dei gemiti...");
+					getchar();
+					printf("\nVai via soddisfatto e con 50 HP in piu'!");
+					eroe->vita += 50;
+					break;
+				case 1:
+					system(clear);
+					printf("La Stagliano' chiude la porta a chiave...");
+					getchar();
+					printf("\n...");
+					getchar();
+					printf("\nOh no! La Stagliano' in realta' e' Vincent! E adesso siete soli, chiusi nel suo ufficio!");
+					getchar();
+					printf("\nVai via con 25 HP in meno ed uno strano dolore al fondoschiena!");
+					eroe->vita -= 25;
+					break;
+				default:
+					break;
+			}
+		}
+		fflush(stdin);
+		system(clear);
+		flagVincent = 0;
 		currentPosition = 44;
         
         }
