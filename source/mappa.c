@@ -136,13 +136,15 @@ void right(void){
     move(2);
     }
 
+
+
 void GenerateEnemies() {				// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
 	srand((unsigned int)time(NULL));			// in caso contrario, li genera.
 	int i;
 	bool CusyLives = 0;
 	bool FazioLives = 0;
 	
-	for (i = 0; i < 45; i++) {
+	for (i = 1; i < 45; i++) {
 		if (stanze[i].enemy == 1)
 			CusyLives = 1;
 		if (stanze[i].enemy == 2)
