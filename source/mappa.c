@@ -8,6 +8,7 @@
 
 int currentPosition;
 int thereIsEnemy;
+int flagFazio = 1;
 
 Room stanze[45] = {
     {"Inizio", 0},             //0
