@@ -9,6 +9,7 @@
 int currentPosition;
 int thereIsEnemy;
 int flagFazio = 1;
+int flagVincent = 1;
 
 Room stanze[45] = {
     {"Inizio", 0},             //0
@@ -143,12 +144,17 @@ void GenerateEnemies() {				// Controlla se all'interno della mappa sono present
 	int i;
 	bool CusyLives = 0;
 	bool FazioLives = 0;
+	bool VincentLives = 0;
+	
+    
 	
 	for (i = 1; i < 45; i++) {
 		if (stanze[i].enemy == 1)
 			CusyLives = 1;
 		if (stanze[i].enemy == 2)
 			FazioLives = 1;
+		if (stanze[i].enemy == 3)
+			VincentLives = 1;
 	}
 
 	if (CusyLives == 0) {
@@ -158,6 +164,10 @@ void GenerateEnemies() {				// Controlla se all'interno della mappa sono present
 	if (FazioLives == 0) {
 		i = rand() % 45;
 		stanze[i].enemy = 2;
+	}
+	if (VincentLives == 0) {
+		i = rand() % 45;
+		stanze[i].enemy = 3;
 	}
 }
     

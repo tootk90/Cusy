@@ -107,6 +107,13 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
         showStat(*eroe);
         
         }
+	if(thereIsEnemy == 3 && flagVincent == 1){
+        printf("\nIn questa stanza e' presente Vincent che ti porta nel suo ufficio\n"
+					"...per parlare\n");
+       flagVincent = 0;
+		currentPosition = 44;
+        
+        }
     }
     
 void startFIght(Personaggio *nemico, Personaggio eroe){

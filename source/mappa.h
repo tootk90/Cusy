@@ -4,6 +4,7 @@
     extern int currentPosition;
     extern int thereIsEnemy;
 	extern int flagFazio;
+	extern int flagVincent;
 
     void move(int dir);
     void describe(Room room);
