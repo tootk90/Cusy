@@ -121,7 +121,7 @@ void startFIght(Personaggio *nemico, Personaggio eroe){
     printf("Inizia una lotta tra %s e %s!\n"
             "Premi 'k' per attaccare.\n"
             "Le tue stat sono: %d HP\n"
-            "                  %d ATK\n\n\n",eroe.nome, nemico->nome, eroe.vita, eroe.atk);
+            "                  %d ATK\n\n\n", eroe.nome, nemico->nome, eroe.vita, eroe.atk);
     while(isAlive(*nemico) && isAlive(eroe)){
         a = _getch();
         fflush(stdin);
