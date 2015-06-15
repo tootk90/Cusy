@@ -29,16 +29,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\headers\type.h">
+    <ClInclude Include="..\source\system.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\mappa.h">
+    <ClInclude Include="..\source\azioni.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\game.h">
+    <ClInclude Include="..\source\game.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\azioni.h">
+    <ClInclude Include="..\source\mappa.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>

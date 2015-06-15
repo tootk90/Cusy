@@ -13,5 +13,7 @@
     void right(void);
     void left(void);
 
+	void GenerateEnemies();
+
 
 #endif

@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include "type.h"
 #include "mappa.h"
+#include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
+
 
 int currentPosition;
 int thereIsEnemy;
-
-
 
 Room stanze[45] = {
     {"Inizio", 0},             //0
@@ -15,7 +17,7 @@ Room stanze[45] = {
     {"Corridoio", 0},          //4
     {"Ala Sud", 0},            //5
     {"Corridoio Sud", 0},      //6
-    {"Corridoio Sud", 1},      //7
+    {"Corridoio Sud", 0},      //7
     {"Angolo Sud", 0},         //8
     {"Corridoio Est", 0},      //9
     {"Corridoio Est", 0},      //10
@@ -32,7 +34,7 @@ Room stanze[45] = {
     {"Pianerottolo", 0},       //21
     {"Dipart. di fisica", 0},  //22
     {"Dipart. di fisica", 0},  //23
-    {"Uffici Dipart.", 2},     //24
+    {"Uffici Dipart.", 0},     //24
     {"Scala", 0},              //25
     {"Scala", 0},              //26
     {"Scala", 0},              //27
@@ -132,6 +134,29 @@ void left(void){
 void right(void){
     move(2);
     }
+
+void GenerateEnemies() {				// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
+	srand((unsigned int)time(NULL));			// in caso contrario, li genera.
+	int i;
+	bool CusyLives = 0;
+	bool FazioLives = 0;
+	
+	for (i = 0; i < 45; i++) {
+		if (stanze[i].enemy == 1)
+			CusyLives = 1;
+		if (stanze[i].enemy == 2)
+			FazioLives = 1;
+	}
+
+	if (CusyLives == 0) {
+		i = rand() % 45;
+		stanze[i].enemy = 1;
+	}
+	if (FazioLives == 0) {
+		i = rand() % 45;
+		stanze[i].enemy = 2;
+	}
+}
     
 void describe(Room room){
     printf("ti trovi in %s\n",  room.name);
