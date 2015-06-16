@@ -10,8 +10,7 @@
     void describe();
     void showRoom(void);
 	void GenerateMaze(void);
-
-
+	
 	void GenerateEnemies();
 
 
