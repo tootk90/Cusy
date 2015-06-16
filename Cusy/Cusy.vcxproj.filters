@@ -41,5 +41,8 @@
     <ClInclude Include="..\source\mappa.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\type.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

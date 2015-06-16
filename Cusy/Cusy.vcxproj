@@ -76,6 +76,7 @@
     <ClInclude Include="..\source\game.h" />
     <ClInclude Include="..\source\mappa.h" />
     <ClInclude Include="..\source\system.h" />
+    <ClInclude Include="..\source\type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

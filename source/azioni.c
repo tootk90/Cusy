@@ -35,8 +35,7 @@ void generaStat(Personaggio *x){
 	
 	}
 
-void showStat(Personaggio x){
-	
+void showStat(Personaggio x){	
 	printf("%s ha  %d di attacco e %dHP\n", x.nome, x.atk, x.vita);
 	}
 
@@ -46,19 +45,21 @@ void attack(Personaggio eroe, Personaggio *nemico){
     }
 
 int isAlive(Personaggio a){
-    if(a.vita < 1){
-        printf("\n %s e' stato ucciso!\n", a.nome);
-        return 0;
-        }else {
+	if (a.vita < 1){
+		printf("\n %s e' stato ucciso!\n", a.nome);
+		return 0;
+	}
+	else {
         return 1;}
         
     
     }
 int isDead(Personaggio a){
+
     if(a.vita < 1){
-       
-        return 1;
-        }else {
+		return 1;
+        }
+	else {
         return 0;
         }
         
@@ -66,23 +67,25 @@ int isDead(Personaggio a){
     }
     
 
-void movement(void){
+void movement(POS position){
 	direzione = _getch();
     fflush(stdin);
 
 	switch(direzione){
 		case 'w':
-			up();
+			move(&position, 0);
             break;
 		case 's':
-			down();
+			move(&position, 3);
             break;
 		case 'd':
-            right();
+			move(&position, 2);
             break;
         case 'a':
-            left();
+			move(&position, 1);
             break;
+		default:
+			break;
         }
 }
     

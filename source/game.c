@@ -10,7 +10,7 @@ void game()
 {
 	Personaggio eroe, nemico;
 	
-	
+	struct position coord = { 0, 0 };
 	
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
@@ -25,7 +25,7 @@ void game()
 	
 	
     showRoom();
-   /* while(isAlive(nemico)){
+	/* while(isAlive(nemico)){
     
     showStat(nemico);
     showStat(eroe);
@@ -35,8 +35,8 @@ void game()
     */
     while(1){
 
-    movement();   
-  //  showRoom();
+	movement(coord);   
+	//showRoom();
 	GenerateEnemies();
     checkFight(&nemico, &eroe);
 

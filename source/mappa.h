@@ -6,14 +6,11 @@
 	extern int flagFazio;
 	extern int flagVincent;
 
-    void move(int dir);
-    void describe(Room room);
+    void move(POS *pos, int dir);
+    void describe();
     void showRoom(void);
+	void GenerateMaze(void);
 
-    void up(void);
-    void down(void);
-    void right(void);
-    void left(void);
 
 	void GenerateEnemies();
 

@@ -1,5 +1,7 @@
 #ifndef TYPE_H
 #define TYPE_H
+#include <stdbool.h>
+
     typedef struct personaggio{
 	int vita;
 	int atk;
@@ -8,9 +10,14 @@
 	} Personaggio;
     
     typedef struct room{
-        char name[20];
-        int enemy;
+        char *name;
+		bool walkable;
+		int enemy;
         
         } Room;
-        
+    
+	typedef struct position {
+		int x;
+		int y;
+	} POS ;
     #endif
