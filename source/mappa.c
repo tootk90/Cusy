@@ -25,11 +25,76 @@ void GenerateMaze(Room stanze[DIM][DIM]){
 		}
 	}
 
-
-
-
+	/*----CHIUSURA BORDI LABIRINTO----*/
+	for (i = 0; i <= 10; i++){
+		stanze[i][0].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[0][i].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[9][i].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[i][9].walkable = 0;
+	}
+	/*----CASELLE INIZIO E ARRIVO SEMPRE PERCORRIBILI----*/
 	stanze[1][1].walkable = 1;
+	stanze[8][8].walkable = 1;
 }
+bool CheckMaze(Room stanze[DIM][DIM]){
+	int n = 0, last = n, x, y;
+ 	int rooms[DIM][DIM];
+
+
+	/*-- ASSEGNIAMO A TUTTE LE CELLE DELLA MATRICE IL VALORE 1000 --*/
+	for (x = 0; x < DIM; x++){
+		for (y = 0; y < DIM; y++){
+			rooms[x][y] = 1000;
+		}
+	}
+
+	/*-- ASSEGNIAMO IL VALORE 0 ALLA CASELLA DI INIZIO -- */
+	rooms[x][y] = n;
+	n++;
+
+	while (rooms[8][8] == 1000 ){		// SE LA CASELLA DI USCITA NON VIENE RAGGIUNTA IL CICLO CONTINUA
+		last = n;
+		for (x = 1; x < DIM; x++){
+			for (y = 1; y < DIM; y++){
+
+				if (rooms[x][y] == n) {
+
+					if (stanze[x + 1][y].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO CASELLA A DESTRA
+						rooms[x + 1][y] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[x - 1][y].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO CASELLA A SINISTRA
+						rooms[x - 1][y] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[x][y + 1].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO IN BASSO
+						rooms[x][y + 1] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[x][y - 1].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO IN ALTO
+						rooms[x][y - 1] = last + 1;
+						n = last + 1;
+					}
+
+
+				}
+			} 
+		}
+		if (n == last){
+			return 0;
+		}
+	}
+	return 1;		//SE RAGGIUNGE QUESTO PUNTO E' USCITO DAL WHILE
+}
+
+
+
 
 void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
 	int x = (*attuale).x;
