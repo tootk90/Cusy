@@ -1,7 +1,6 @@
 #ifndef GAME_H
-#define GAME_H
-    #include "type.h"
-	extern Room stanze[10][10];
+	#define GAME_H
+	#include "type.h"
 	void game();
     void intro();
 #endif

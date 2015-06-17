@@ -13,7 +13,7 @@ void game()
 {
 	Personaggio eroe, nemico;
 	
-	struct position coord = { 0, 0 };
+	struct position coord = { 1, 1 };
 	GenerateMaze(stanze);
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
@@ -27,7 +27,7 @@ void game()
     showStat(eroe);
 	
 	
-    showRoom();
+    showRoom(stanze[coord.x][coord.y]);
 	/* while(isAlive(nemico)){
     
     showStat(nemico);
@@ -38,8 +38,8 @@ void game()
     */
     while(1){
 
-	movement(coord);   
-	//showRoom();
+	movement(&coord, stanze);   
+	showRoom(stanze[coord.x][coord.y]);
 	GenerateEnemies();
     checkFight(&nemico, &eroe);
 

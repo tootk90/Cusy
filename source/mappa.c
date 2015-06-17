@@ -6,6 +6,7 @@
 #include <time.h>
 
 
+
 int currentPosition;
 int thereIsEnemy;
 int flagFazio = 1;
@@ -14,29 +15,29 @@ int flagVincent = 1;
 
 
 
-void GenerateMaze(Room rooms[10][10]){
+void GenerateMaze(Room stanze[DIM][DIM]){
 	int i, h;
-	for (i = 0; i <= 10; i++){
-		for (h = 0; h <= 10; h++){
-			rooms[i][h].walkable = rand() % 2;
-			rooms[i][h].enemy = 0;
-			rooms[i][h].name = (char*)"Stanza";
+	for (i = 0; i <= DIM; i++){
+		for (h = 0; h <= DIM; h++){
+			stanze[i][h].walkable = rand() % 2;
+			stanze[i][h].enemy = 0;
+			stanze[i][h].name = (char*)"Stanza";
 		}
 	}
 
 
 
 
-	stanze[0][0].walkable = 1;
+	stanze[1][1].walkable = 1;
 }
 
-void move(POS *attuale, int dir){
+void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
 	int x = (*attuale).x;
 	int y = (*attuale).y;
 
 	switch (dir) {
 		case 0:  //up
-			if ((stanze)[x][y - 1].walkable == 1) {
+			if (stanze[x][y - 1].walkable == 1) {
 				(*attuale).y -= 1;
 			}
 			else
@@ -73,7 +74,7 @@ void move(POS *attuale, int dir){
 
 
 
-void GenerateEnemies() {						// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
+void GenerateEnemies(Room stanze[DIM][DIM]) {						// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
 	srand((unsigned int)time(NULL));			// in caso contrario, li genera.
 	int i, h;
 	bool CusyLives = 0;
@@ -95,8 +96,8 @@ void GenerateEnemies() {						// Controlla se all'interno della mappa sono prese
 
 	if (CusyLives == 0) {
 		do {
-			i = rand() % 45;
-			h = rand() % 45;	
+			i = rand() % DIM;
+			h = rand() % DIM;	
 		} 
 		while (stanze[i][h].walkable == 0);
 
@@ -105,8 +106,8 @@ void GenerateEnemies() {						// Controlla se all'interno della mappa sono prese
 
 	if (FazioLives == 0) {
 		do {
-			i = rand() % 45;								//C'è la possibilità che i nemici si sovrascrivano.
-			h = rand() % 45;
+			i = rand() % DIM;								//C'è la possibilità che i nemici si sovrascrivano.
+			h = rand() % DIM;
 		}
 		while (stanze[i][h].walkable == 0);
 
@@ -115,8 +116,8 @@ void GenerateEnemies() {						// Controlla se all'interno della mappa sono prese
 
 	if (VincentLives == 0) {
 		do {
-			i = rand() % 45;
-			h = rand() % 45;
+			i = rand() % DIM;
+			h = rand() % DIM;
 		} 
 		while (stanze[i][h].walkable == 0);
 
@@ -124,18 +125,19 @@ void GenerateEnemies() {						// Controlla se all'interno della mappa sono prese
 	}
 }
     
-void describe(){}
+void describe(Room room){
+	printf("\nTi trovi in: %s", room.name);
+}
     
 
 void checkEnemy(Room room) {
     thereIsEnemy = room.enemy;
     }
     
-void showRoom(){
-   // describe(stanze[currentPosition]);
-   // checkEnemy(stanze[currentPosition]);
-    
-    
+void showRoom(Room room){
+   describe(room);
+   checkEnemy(room);
+       
     }
 
 

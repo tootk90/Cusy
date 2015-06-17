@@ -1,15 +1,18 @@
 #ifndef MAPPA_H
 #define MAPPA_H
     #include "type.h"
-    extern int currentPosition;
+
+	#define DIM 10
+    
+	extern int currentPosition;
     extern int thereIsEnemy;
 	extern int flagFazio;
 	extern int flagVincent;
 
-    void move(POS *pos, int dir);
-    void describe();
-    void showRoom(void);
-	void GenerateMaze(void);
+	void move(POS *pos, int dir, Room stanze[DIM][DIM]);
+    void describe(Room room);
+    void showRoom(Room room);
+	void GenerateMaze(Room stanze[DIM][DIM]);
 	
 	void GenerateEnemies();
 

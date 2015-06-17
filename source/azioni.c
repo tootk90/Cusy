@@ -67,22 +67,22 @@ int isDead(Personaggio a){
     }
 
 
-void movement(POS position){
+void movement(POS *position, Room stanze[DIM][DIM]){
+	fflush(stdin);
 	direzione = _getch();
-    fflush(stdin);
 
 	switch(direzione){
 		case 'w':
-			move(&position, 0);
+			move(position, 0, stanze);
             break;
 		case 's':
-			move(&position, 3);
+			move(position, 3, stanze);
             break;
 		case 'd':
-			move(&position, 2);
+			move(position, 2, stanze);
             break;
         case 'a':
-			move(&position, 1);
+			move(position, 1, stanze);
             break;
 		default:
 			break;
