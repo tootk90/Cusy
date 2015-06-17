@@ -65,7 +65,7 @@ int isDead(Personaggio a){
         
     
     }
-    
+
 
 void movement(POS position){
 	direzione = _getch();

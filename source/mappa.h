@@ -14,4 +14,7 @@
 	void GenerateEnemies();
 
 
+	void GenerateMaze(Room [10][10]);
+
+	Room stanze[10][10];
 #endif

@@ -11,20 +11,24 @@ int thereIsEnemy;
 int flagFazio = 1;
 int flagVincent = 1;
 
-Room stanze[10][10];
 
-void GenerateMaze(){
+
+
+void GenerateMaze(Room rooms[10][10]){
 	int i, h;
 	for (i = 0; i <= 10; i++){
 		for (h = 0; h <= 10; h++){
-			stanze[i][h].walkable = rand() % 2;
-			stanze[i][h].enemy = 0;
-			stanze[i][h].name = (char*)"Stanza";
+			rooms[i][h].walkable = rand() % 2;
+			rooms[i][h].enemy = 0;
+			rooms[i][h].name = (char*)"Stanza";
 		}
 	}
+
+
+
+
 	stanze[0][0].walkable = 1;
 }
-
 
 void move(POS *attuale, int dir){
 	int x = (*attuale).x;
@@ -39,14 +43,14 @@ void move(POS *attuale, int dir){
 				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 1:  //left
-			if ((stanze)[x-1][y].walkable == 1) {
+			if (stanze[x-1][y].walkable == 1) {
 				(*attuale).x -= 1;
 			}
 			else
 				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 2:  //right
-			if ((stanze)[x+1][y].walkable == 1) {
+			if (stanze[x+1][y].walkable == 1) {
 				(*attuale).x += 1;
 			}
 			else

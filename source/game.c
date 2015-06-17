@@ -5,13 +5,16 @@
 #include "mappa.h"
 
 
+Room stanze[10][10];
+
+
 
 void game()
 {
 	Personaggio eroe, nemico;
 	
 	struct position coord = { 0, 0 };
-	
+	GenerateMaze(stanze);
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
