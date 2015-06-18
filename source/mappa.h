@@ -15,6 +15,8 @@
 	void GenerateMaze(Room stanze[DIM][DIM]);
 	
 	void GenerateEnemies();
+	
+	bool CheckMaze(Room stanze[10][10]);
 
 
 	void GenerateMaze(Room [10][10]);

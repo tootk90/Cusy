@@ -47,10 +47,10 @@ bool CheckMaze(Room stanze[DIM][DIM]){
  	int rooms[DIM][DIM];
 
 
-	/*-- ASSEGNIAMO A TUTTE LE CELLE DELLA MATRICE IL VALORE 1000 --*/
+	/*-- ASSEGNIAMO A TUTTE LE CELLE DELLA MATRICE IL VALORE -1 --*/
 	for (x = 0; x < DIM; x++){
 		for (y = 0; y < DIM; y++){
-			rooms[x][y] = 1000;
+			rooms[x][y] = -1;
 		}
 	}
 
@@ -58,26 +58,26 @@ bool CheckMaze(Room stanze[DIM][DIM]){
 	rooms[x][y] = n;
 	n++;
 
-	while (rooms[8][8] == 1000 ){		// SE LA CASELLA DI USCITA NON VIENE RAGGIUNTA IL CICLO CONTINUA
+	while (rooms[8][8] == -1 ){		// SE LA CASELLA DI USCITA NON VIENE RAGGIUNTA IL CICLO CONTINUA
 		last = n;
 		for (x = 1; x < DIM; x++){
 			for (y = 1; y < DIM; y++){
 
 				if (rooms[x][y] == n) {
 
-					if (stanze[x + 1][y].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO CASELLA A DESTRA
+					if (stanze[x + 1][y].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO CASELLA A DESTRA
 						rooms[x + 1][y] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x - 1][y].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO CASELLA A SINISTRA
+					if (stanze[x - 1][y].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO CASELLA A SINISTRA
 						rooms[x - 1][y] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x][y + 1].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO IN BASSO
+					if (stanze[x][y + 1].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO IN BASSO
 						rooms[x][y + 1] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x][y - 1].walkable == 1 && rooms[x + 1][y] > n){	//  CONTROLLO IN ALTO
+					if (stanze[x][y - 1].walkable == 1 && rooms[x + 1][y] == -1){	//  CONTROLLO IN ALTO
 						rooms[x][y - 1] = last + 1;
 						n = last + 1;
 					}

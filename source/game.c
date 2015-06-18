@@ -14,7 +14,12 @@ void game()
 	Personaggio eroe, nemico;
 	
 	struct position coord = { 1, 1 };
-	GenerateMaze(stanze);
+
+	do {
+		GenerateMaze(stanze);
+	} while (CheckMaze(stanze) == 0);
+
+
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));

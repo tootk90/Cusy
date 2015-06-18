@@ -62,7 +62,7 @@ void PrintMazes(Room rooms[DIM][DIM]){		//stampa la mastrice a schermo
 
 
 void generateMaze(Room room[DIM][DIM]){
-/
+
 	int x = 1;			//setto coordinate di partenza
 	int y = 1;	
 	int oldx, oldy;	//variabili che mi registrano la posizione precedente
