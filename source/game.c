@@ -21,6 +21,7 @@ void game()
 	closeMaze(stanze);
 	stabilizeMap(stanze);
 	PrintMazes(stanze);
+	MazeNames(stanze);
 	GenerateEnemies(stanze);
 	
 	generaStat(&eroe);

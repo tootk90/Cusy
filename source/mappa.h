@@ -9,6 +9,7 @@
 	extern int flagFazio;
 	extern int flagVincent;
 
+	void MazeNames(Room stanze[DIM][DIM]);
 	void move(POS *pos, int dir, Room stanze[DIM][DIM]);
     void describe(Room room);
     void showRoom(Room room);

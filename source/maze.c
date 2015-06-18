@@ -158,14 +158,22 @@ void stabilizeMap(Room stanze[DIM][DIM]){
 		for (h = 0; h < DIM; h++){
 			if(stanze[i][h].visited == 1){
 				stanze[i][h].walkable = 1;
-				stanze[i][h].name = "Stanza";
 				}else{
 					stanze[i][h].walkable = 0;
 					}
 			}
 		}
 }
-
+void MazeNames(Room stanze[DIM][DIM]){
+	int i, h;
+	for (i = 0; i < DIM; i++){
+		for (h = 0; h < DIM; h++){
+			if (stanze[i][h].walkable == 1){
+				stanze[i][h].name = "Stanza";
+			}
+		}
+	}
+}
 
 void showPos(Room stanze[DIM][DIM], POS pos){	//stampa la posizione del giocatore
 	int x,y;
