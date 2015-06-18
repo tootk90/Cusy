@@ -46,7 +46,8 @@ void game()
     */
     while(1){
 
-	movement(&coord, stanze);   
+	movement(&coord, stanze); 
+	showPos(stanze, coord);
 	showRoom(stanze[coord.x][coord.y]);
 	
     checkFight(&nemico, &eroe);

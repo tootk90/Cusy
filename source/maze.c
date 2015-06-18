@@ -165,6 +165,27 @@ void stabilizeMap(Room stanze[DIM][DIM]){
 		}
 }
 
+
+void showPos(Room stanze[DIM][DIM], POS pos){	//stampa la posizione del giocatore
+	int x,y;
+	x = pos.x;
+	y = pos.y;
+	int i, h;
+	for (i = y-5; i < y+5; i++){
+		for (h = x-5; h < x+5; h++){
+			if(stanze[i][h].walkable == 1){	//stampa 0 per muri e 1 per le stanze
+				if(i == y && h == x){
+					printf("x");
+					continue;
+					}
+				printf(" ");
+				}else{
+					printf("||");
+					}
+			}
+	printf("\n");
+	}
+}
 //-----------------------------------------------------------
 
 /*

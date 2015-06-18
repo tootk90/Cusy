@@ -18,6 +18,8 @@
 	void stabilizeMap(Room stanze[DIM][DIM]);
 	void resetMaze (Room stanze[DIM][DIM]);
 	void closeMaze(Room stanze[DIM][DIM]);
+	void showPos(Room stanze[DIM][DIM], POS pos);
+	
 	void GenerateEnemies(Room stanze[DIM][DIM]);
 	
 	bool CheckMaze(Room stanze[DIM][DIM]);
