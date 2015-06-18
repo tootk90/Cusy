@@ -180,7 +180,7 @@ void showPos(Room stanze[DIM][DIM], POS pos){	//stampa la posizione del giocator
 					}
 				printf(" ");
 				}else{
-					printf("%c", 178);
+					printf("%c",178 );
 					}
 			}
 	printf("\n");
