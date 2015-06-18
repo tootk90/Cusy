@@ -87,6 +87,8 @@ void movement(POS *position, Room stanze[DIM][DIM]){
 		default:
 			break;
         }
+	system(clear);
+	showPos(stanze, *position);
 }
     
 void checkFight(Personaggio *nemico, Personaggio *eroe){
