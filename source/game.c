@@ -5,12 +5,24 @@
 #include "mappa.h"
 
 
+//Room stanze[DIM][DIM];
+
+
 
 void game()
 {
-	Personaggio eroe, nemico;
+	Personaggio eroe;
 	
+	struct position coord = { 1, 1 };
 	
+	resetMaze(stanze);
+	closeMaze(stanze);
+	generateMazeAlg(stanze);
+	closeMaze(stanze);
+	stabilizeMap(stanze);
+	PrintMazes(stanze);
+	MazeNames(stanze);
+	GenerateEnemies(stanze);
 	
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
@@ -18,14 +30,11 @@ void game()
 	scanf("%s", eroe.nome);
     fflush(stdin);
 	
-	nemico.nome = "La Cusimano";
-	generaStat(&nemico);
-    nemico.vita = 100;
     showStat(eroe);
 	
 	
-    showRoom();
-   /* while(isAlive(nemico)){
+    showRoom(stanze[coord.x][coord.y]);
+	/* while(isAlive(nemico)){
     
     showStat(nemico);
     showStat(eroe);
@@ -35,10 +44,11 @@ void game()
     */
     while(1){
 
-    movement();   
-  //  showRoom();
-	GenerateEnemies();
-    checkFight(&nemico, &eroe);
+	movement(&coord, stanze); 
+	//showPos(stanze, coord);
+	showRoom(stanze[coord.y][coord.x]);
+	
+    checkFight(stanze[coord.y][coord.x], &eroe);
 
     if(currentPosition == 13){
         break;
@@ -55,10 +65,9 @@ void game()
 
 
 void intro(){
-    printf("Benvenuto nel castello della Cusimano.\n"
-           "Per giocare ti servira un foglio e una matita per disegnare la mappa.\n"
-           "Per spostarti utilizza i tasti 'wasd' e digita invio ad ogni inserimento\n"
-           "il tuo scopo e' arrivare alla fine.\n"
-           "Buona fortuna\n");
+    printf(	"Benvenuto nel castello della Cusimano.\n"
+			"Per spostarti utilizza i tasti 'wasd',\n"
+			"il tuo scopo e' arrivare alla fine e sconfiggere la regina del castello.\n"
+			"Buona fortuna\n");
     getchar();
     }

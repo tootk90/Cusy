@@ -6,142 +6,135 @@
 #include <time.h>
 
 
+
 int currentPosition;
 int thereIsEnemy;
 int flagFazio = 1;
 int flagVincent = 1;
+int flagCusy = 1;
 
-Room stanze[45] = {
-    {"Inizio", 0},             //0
-    {"Corridoio Nord", 0},     //1
-    {"Corridoio Nord", 0},     //2 
-    {"Corridoio", 0},          //3
-    {"Corridoio", 0},          //4
-    {"Ala Sud", 0},            //5
-    {"Corridoio Sud", 0},      //6
-    {"Corridoio Sud", 0},      //7
-    {"Angolo Sud", 0},         //8
-    {"Corridoio Est", 0},      //9
-    {"Corridoio Est", 0},      //10
-    {"Ala Est", 0},            //11
-    {"Ala Est", 0},            //12
-    {"FINE", 0},               //13
-    {"Sotterraneo sud", 0},    //14
-    {"Sotterraneo sud", 0},    //15
-    {"Corridoio sott.", 0},    //16
-    {"Corridoio sott.", 0},    //17
-    {"Corridoio sott.", 0},    //18
-    {"Scala", 0},              //19
-    {"Scala", 0},              //20
-    {"Pianerottolo", 0},       //21
-    {"Dipart. di fisica", 0},  //22
-    {"Dipart. di fisica", 0},  //23
-    {"Uffici Dipart.", 0},     //24
-    {"Scala", 0},              //25
-    {"Scala", 0},              //26
-    {"Scala", 0},              //27
-    {"Scala", 0},              //28
-    {"Scala", 0},              //29
-    {"Porta con 12 dita", 0},  //30
-    {"Corridoio", 0},          //31
-    {"Corridoio", 0},          //32
-    {"Gen. nucleare", 0},      //33
-    {"Decontaminazione", 0},   //34
-    {"Sala Controllo", 0},     //35
-    {"Nocciolo", 0},           //36
-    {"Compartimento 1", 0},    //37
-    {"Compartimento 2", 0},    //38
-    {"Compartimento 3", 0},    //39
-    {"Ingresso Dip.", 0},      //40
-    {"Campo Complesso", 0},    //41
-    {"Iperbole Impropria", 0}, //42
-    {"Rette Parallele", 0},    //43
-    {"Uff. Prof. Vince'", 0}   //44
-    
-    };
 
-int mappa[45][4] = {
-   // n  s  e  w     
-    {-1,26, 1,-1},  //0
-    {-1,-1, 2, 0},  //1
-    {-1, 3,-1, 1},  //2
-    { 2, 4,-1,-1},  //3
-    { 3, 5,-1,-1},  //4
-    { 4,14, 6,-1},  //5
-    {-1,-1, 7, 5},  //6
-    {-1,-1, 8, 6},  //7
-    { 9,-1,40, 7},  //8
-    {10, 8,-1,-1},  //9
-    {-1, 9,11,-1},  //10
-    {27,-1,12,10},  //11
-    {-1,-1,13,11},  //12
-    {-1,-1,-1,12},  //13
-    { 5,15,-1,-1},  //14    
-    {14,-1,-1,16},  //15
-    {-1,-1,15,17},  //16
-    {-1,-1,16,18},  //17    
-    {19,-1,17,-1},  //18
-    {20,18,-1,-1},  //19
-    {21,19,-1,-1},  //20    
-    {-1,20,22,-1},  //21
-    {-1,-1,23,21},  //22
-    {24,-1,-1,22},  //23
-    {25,23,-1,-1},  //24
-    {-1,24,-1,26},  //25
-    { 0,-1,25,-1},  //26
-    {28,11,-1,-1},  //27
-    {-1,27,29,-1},  //28
-    {-1,-1,30,28},  //29
-    {31,-1,-1,29},  //30
-    {32,30,-1,-1},  //31
-    {-1,31,33,-1},  //32
-    {-1,-1,34,32},  //33
-    {-1,-1,35,33},  //34
-    {-1,-1,36,34},  //35
-    {37,39,38,35},  //36
-    {-1,36,-1,-1},  //37
-    {-1,-1,-1,36},  //38
-    {36,-1,-1,-1},  //39
-    {-1,-1,41, 8},  //40
-    {43,42,40,-1},  //41
-    {41,-1,-1,-1},  //42
-    {44,41,-1,-1},  //43
-    {-1,43,-1,-1}   //44
-    };
-    
-void move(int dir){
-    int newPosition;
-    newPosition = mappa[currentPosition][dir];
-    if (newPosition == -1){
-        printf("davanti a te c'e' un muro\n");
-        }else{
-            currentPosition = newPosition;
-            showRoom();
-            }
-    
-    }
 
-void up(void){
-    move(0);
-    }
-    
-void down(void){
-    move(1);
-    }
 
-void left(void){
-    move(3);
-    }
+void GenerateMaze(Room stanze[DIM][DIM]){
+	int i, h;
+	for (i = 0; i <= DIM; i++){
+		for (h = 0; h <= DIM; h++){
+			stanze[i][h].walkable = rand() % 2;
+			stanze[i][h].enemy = 0;
+			stanze[i][h].name = (char*)"Stanza";
+		}
+	}
 
-void right(void){
-    move(2);
+	/*----CHIUSURA BORDI LABIRINTO----*/
+	for (i = 0; i <= 10; i++){
+		stanze[i][0].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[0][i].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[9][i].walkable = 0;
+	}
+	for (i = 0; i <= 10; i++){
+		stanze[i][9].walkable = 0;
+	}
+	/*----CASELLE INIZIO E ARRIVO SEMPRE PERCORRIBILI----*/
+	stanze[1][1].walkable = 1;
+	stanze[8][8].walkable = 1;
+}
+bool CheckMaze(Room stanze[DIM][DIM]){
+	int n = 0, last = n, x, y;
+ 	int rooms[DIM][DIM];
+
+
+	/*-- ASSEGNIAMO A TUTTE LE CELLE DELLA MATRICE IL VALORE -1 --*/
+	for (y = 0; y < DIM; y++){
+		for (x = 0; x < DIM; x++){
+			rooms[y][x] = -1;
+		}
+	}
+
+	/*-- ASSEGNIAMO IL VALORE 0 ALLA CASELLA DI INIZIO -- */
+	rooms[y][x] = n;
+	n++;
+
+	while (rooms[8][8] == -1 ){		// SE LA CASELLA DI USCITA NON VIENE RAGGIUNTA IL CICLO CONTINUA
+		last = n;
+		for (x = 1; x < DIM; x++){
+			for (y = 1; y < DIM; y++){
+
+				if (rooms[x][y] == n) {
+
+					if (stanze[y + 1][x].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO CASELLA IN BASSO
+						rooms[y + 1][x] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[y - 1][x].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO CASELLA IN ALTO
+						rooms[y - 1][x] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[y][x + 1].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO A DESTRA
+						rooms[y][x + 1] = last + 1;
+						n = last + 1;
+					}
+					if (stanze[y][x - 1].walkable == 1 && rooms[y + 1][x] == -1){	//  CONTROLLO A SINISTRA
+						rooms[y][x - 1] = last + 1;
+						n = last + 1;
+					}
+
+
+				}
+			} 
+		}
+		if (n == last){
+			return 0;
+		}
+	}
+	return 1;		//SE RAGGIUNGE QUESTO PUNTO E' USCITO DAL WHILE
+}
+
+
+
+
+void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
+	int x = (*attuale).x;
+	int y = (*attuale).y;
+
+	switch (dir) {
+		case 0:  //up
+			if (stanze[y-1][x].walkable == 1) {
+				(*attuale).y -= 1;
+			}
+			break;
+		case 1:  //left
+			if (stanze[y][x-1].walkable == 1) {
+				(*attuale).x -= 1;
+			}
+			break;
+		case 2:  //right
+			if (stanze[y][x+1].walkable == 1) {
+				(*attuale).x += 1;
+			}
+			break;
+		case 3:  //down
+			if ((stanze)[y+1][x].walkable == 1) {
+				(*attuale).y += 1;
+			}
+			break;
+		default:
+			break;
+	}
+
+        
     }
 
 
 
-void GenerateEnemies() {				// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
+
+void GenerateEnemies(Room stanze[DIM][DIM]) {	// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
 	srand((unsigned int)time(NULL));			// in caso contrario, li genera.
-	int i;
+	int i, h;
 	bool CusyLives = 0;
 	bool FazioLives = 0;
 	bool VincentLives = 0;
@@ -149,43 +142,61 @@ void GenerateEnemies() {				// Controlla se all'interno della mappa sono present
     
 	
 	for (i = 1; i < 45; i++) {
-		if (stanze[i].enemy == 1)
-			CusyLives = 1;
-		if (stanze[i].enemy == 2)
-			FazioLives = 1;
-		if (stanze[i].enemy == 3)
-			VincentLives = 1;
+		for (h = 0; h < 45; h++){
+			if (stanze[i][h].enemy == 1)
+				CusyLives = 1;
+			if (stanze[i][h].enemy == 2)
+				FazioLives = 1;
+			if (stanze[i][h].enemy == 3)
+				VincentLives = 1;
+		}
 	}
 
 	if (CusyLives == 0) {
-		i = rand() % 45;
-		stanze[i].enemy = 1;
+		do {
+			i = rand() % DIM;
+			h = rand() % DIM;	
+		} 
+		while (stanze[i][h].walkable == 0);
+
+		stanze[i][h].enemy = 1;
 	}
+
 	if (FazioLives == 0) {
-		i = rand() % 45;
-		stanze[i].enemy = 2;
+		do {
+			i = rand() % DIM;								//C'è la possibilità che i nemici si sovrascrivano.
+			h = rand() % DIM;
+		}
+		while (stanze[i][h].walkable == 0);
+
+		stanze[i][h].enemy = 2;
 	}
+
 	if (VincentLives == 0) {
-		i = rand() % 45;
-		stanze[i].enemy = 3;
+		do {
+			i = rand() % DIM;
+			h = rand() % DIM;
+		} 
+		while (stanze[i][h].walkable == 0);
+
+		stanze[i][h].enemy = 3;
 	}
 }
     
 void describe(Room room){
-    printf("ti trovi in %s\n",  room.name);
-    }
+	printf("\nTi trovi in: %s", room.name);
+}
+    
 
-void checkEnemy(Room room){
+void checkEnemy(Room room) {
     thereIsEnemy = room.enemy;
     }
     
-void showRoom(){
-    describe(stanze[currentPosition]);
-    checkEnemy(stanze[currentPosition]);
-    
-    
+void showRoom(Room room){
+   describe(room);
+   checkEnemy(room);
+       
     }
 
 
 /*-----stanze-----*/
-

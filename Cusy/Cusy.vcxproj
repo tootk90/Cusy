@@ -70,12 +70,14 @@
     <ClCompile Include="..\source\game.c" />
     <ClCompile Include="..\source\main.c" />
     <ClCompile Include="..\source\mappa.c" />
+    <ClCompile Include="..\source\maze.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\azioni.h" />
     <ClInclude Include="..\source\game.h" />
     <ClInclude Include="..\source\mappa.h" />
     <ClInclude Include="..\source\system.h" />
+    <ClInclude Include="..\source\type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
