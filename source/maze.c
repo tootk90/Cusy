@@ -66,7 +66,7 @@ void generateMazeAlg(Room stanze[DIM][DIM]){
 	int x = 1;			//setto coordinate di partenza
 	int y = 1;	
 //	int oldx = -1, oldy = -1;	//variabili che mi registrano la posizione precedente
-	srand(time(NULL));	//seed di rand
+	srand((unsigned int)time(NULL));	//seed di rand
 	
 	while(1){	//ciclo che si interrompe quando la mappa è stata generata
 		//usleep(60000);		//funzione provvisoria per rallentare l'output terminale
