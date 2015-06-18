@@ -11,7 +11,7 @@
 
 void game()
 {
-	Personaggio eroe, nemico;
+	Personaggio eroe;
 	
 	struct position coord = { 1, 1 };
 	
@@ -30,9 +30,6 @@ void game()
 	scanf("%s", eroe.nome);
     fflush(stdin);
 	
-	nemico.nome = "La Cusimano";
-	generaStat(&nemico);
-    nemico.vita = 100;
     showStat(eroe);
 	
 	
@@ -49,9 +46,9 @@ void game()
 
 	movement(&coord, stanze); 
 	//showPos(stanze, coord);
-	showRoom(stanze[coord.x][coord.y]);
+	showRoom(stanze[coord.y][coord.x]);
 	
-    checkFight(&nemico, &eroe);
+    checkFight(stanze[coord.y][coord.x], &eroe);
 
     if(currentPosition == 13){
         break;

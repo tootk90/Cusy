@@ -8,6 +8,7 @@
     extern int thereIsEnemy;
 	extern int flagFazio;
 	extern int flagVincent;
+	extern int flagCusy;
 
 	void MazeNames(Room stanze[DIM][DIM]);
 	void move(POS *pos, int dir, Room stanze[DIM][DIM]);

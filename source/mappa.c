@@ -11,6 +11,7 @@ int currentPosition;
 int thereIsEnemy;
 int flagFazio = 1;
 int flagVincent = 1;
+int flagCusy = 1;
 
 
 
