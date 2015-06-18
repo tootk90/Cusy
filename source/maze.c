@@ -162,8 +162,16 @@ void stabilizeMap(Room room[DIM][DIM]){
 				}else{
 					room[i][h].walkable = 0;
 					}
+<<<<<<< HEAD
 			}
 		}
+=======
+				
+						
+		}
+	printf("\n");
+	}
+>>>>>>> 91626f2f5c249cd885b39e53abaa7b9f6562a57e
 	}
 
 
