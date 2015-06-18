@@ -108,7 +108,7 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
        flagFazio = 0;
         eroe->vita += 50;
         showStat(*eroe);
-        
+		getchar();
         }
 	if(thereIsEnemy == 3 && flagVincent == 1){
 		char ans;
@@ -129,6 +129,7 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
 					getchar();
 					printf("\nVai via soddisfatto e con 50 HP in piu'!");
 					eroe->vita += 50;
+					getchar();
 					break;
 				case 1:
 					system(clear);
@@ -140,6 +141,7 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
 					getchar();
 					printf("\nVai via con 25 HP in meno ed uno strano dolore al fondoschiena!");
 					eroe->vita -= 25;
+					getchar();
 					break;
 				default:
 					break;
