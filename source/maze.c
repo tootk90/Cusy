@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #define DIM  50 // dimensione lato mappa (consigliato 50)
 
 
@@ -152,7 +153,21 @@ void generateMaze(Room room[DIM][DIM]){
 	
 	}
 
-
+void stabilizeMap(Room room[DIM][DIM]){
+	int i, h;
+	for (i = 0; i < DIM; i++){
+		for (h = 0; h < DIM; h++){
+			if(room[i][h].visited == 1){
+				room[i][h].walkable = 1;
+				}else{
+					room[i][h].walkable = 0;
+					}
+				
+						
+		}
+	printf("\n");
+	}
+	}
 
 
 //-----------------------------------------------------------
