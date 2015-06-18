@@ -48,9 +48,9 @@ void PrintMazes(Room stanze[DIM][DIM]){		//stampa la mastrice a schermo
 	for (i = 0; i < DIM; i++){
 		for (h = 0; h < DIM; h++){
 			if(stanze[i][h].visited == 0){	//stampa 0 per muri e 1 per le stanze
-				printf("0");
+				printf("%c", 219);
 				}else{
-					printf("1");
+					printf(" ");
 					}
 			}
 	printf("\n");
@@ -158,6 +158,7 @@ void stabilizeMap(Room stanze[DIM][DIM]){
 		for (h = 0; h < DIM; h++){
 			if(stanze[i][h].visited == 1){
 				stanze[i][h].walkable = 1;
+				stanze[i][h].name = "Stanza";
 				}else{
 					stanze[i][h].walkable = 0;
 					}
@@ -178,8 +179,16 @@ void showPos(Room stanze[DIM][DIM], POS pos){	//stampa la posizione del giocator
 					printf("%c", 167);
 					continue;
 					}
-				printf(" ");
-				}else{
+				else {
+					if (stanze[i][h].enemy != -1) {
+						printf("B");
+					}
+					else {
+						printf(" ");
+					}
+				}
+			}
+			else {
 					printf("%c", 219);
 					}
 			}

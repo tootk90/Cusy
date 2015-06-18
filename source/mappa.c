@@ -105,29 +105,21 @@ void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
 			if (stanze[y-1][x].walkable == 1) {
 				(*attuale).y -= 1;
 			}
-			else
-				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 1:  //left
 			if (stanze[y][x-1].walkable == 1) {
 				(*attuale).x -= 1;
 			}
-			else
-				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 2:  //right
 			if (stanze[y][x+1].walkable == 1) {
 				(*attuale).x += 1;
 			}
-			else
-				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 3:  //down
 			if ((stanze)[y+1][x].walkable == 1) {
 				(*attuale).y += 1;
 			}
-			else
-				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		default:
 			break;
@@ -139,7 +131,7 @@ void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
 
 
 
-void GenerateEnemies(Room stanze[DIM][DIM]) {						// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
+void GenerateEnemies(Room stanze[DIM][DIM]) {	// Controlla se all'interno della mappa sono presenti Fazio e la Cusy e,
 	srand((unsigned int)time(NULL));			// in caso contrario, li genera.
 	int i, h;
 	bool CusyLives = 0;

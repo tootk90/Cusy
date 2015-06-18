@@ -67,10 +67,9 @@ void game()
 
 
 void intro(){
-    printf("Benvenuto nel castello della Cusimano.\n"
-           "Per giocare ti servira un foglio e una matita per disegnare la mappa.\n"
-           "Per spostarti utilizza i tasti 'wasd' e digita invio ad ogni inserimento\n"
-           "il tuo scopo e' arrivare alla fine.\n"
-           "Buona fortuna\n");
+    printf(	"Benvenuto nel castello della Cusimano.\n"
+			"Per spostarti utilizza i tasti 'wasd',\n"
+			"il tuo scopo e' arrivare alla fine e sconfiggere la regina del castello.\n"
+			"Buona fortuna\n");
     getchar();
     }

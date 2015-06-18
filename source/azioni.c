@@ -107,9 +107,11 @@ void checkFight(Personaggio *nemico, Personaggio *eroe){
         }
     if(thereIsEnemy == 2 && flagFazio == 1){
         printf("\nIn questa stanza e' presente il Prof. Fazio che ti Regala 50HP!\n");
-       flagFazio = 0;
+		flagFazio = 0;
         eroe->vita += 50;
         showStat(*eroe);
+		getchar();
+		printf("Premi un tasto per continuare.");
 		getchar();
         }
 	if(thereIsEnemy == 3 && flagVincent == 1){
