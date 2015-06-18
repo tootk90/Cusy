@@ -1,5 +1,5 @@
-Debug/source_mappa.c.o: source/mappa.c type.h mappa.h
+Debug/source_mappa.c.o: source/mappa.c source/type.h source/mappa.h
 
-type.h:
+source/type.h:
 
-mappa.h:
+source/mappa.h:
