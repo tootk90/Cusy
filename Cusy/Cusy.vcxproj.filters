@@ -18,20 +18,23 @@
     <ClCompile Include="..\source\mappa.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\system.c">
+    <ClCompile Include="..\source\game.c">
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="..\source\azioni.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\game.c">
+    <ClCompile Include="..\source\main.c">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\main.c">
+    <ClCompile Include="..\source\maze.c">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\source\system.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
     <ClInclude Include="..\source\azioni.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
@@ -39,9 +42,6 @@
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="..\source\mappa.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\system.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
     <ClInclude Include="..\source\type.h">

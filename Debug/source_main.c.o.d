@@ -1,3 +1,5 @@
-Debug/source_main.c.o: source/main.c game.h
+Debug/source_main.c.o: source/main.c source/game.h source/type.h
 
-game.h:
+source/game.h:
+
+source/type.h:

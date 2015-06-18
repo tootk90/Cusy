@@ -35,8 +35,7 @@ void generaStat(Personaggio *x){
 	
 	}
 
-void showStat(Personaggio x){
-	
+void showStat(Personaggio x){	
 	printf("%s ha  %d di attacco e %dHP\n", x.nome, x.atk, x.vita);
 	}
 
@@ -46,75 +45,126 @@ void attack(Personaggio eroe, Personaggio *nemico){
     }
 
 int isAlive(Personaggio a){
-    if(a.vita < 1){
-        printf("\n %s e' stato ucciso!\n", a.nome);
-        return 0;
-        }else {
+	if (a.vita < 1){
+		printf("\n %s e' stato ucciso!\n", a.nome);
+		return 0;
+	}
+	else {
         return 1;}
         
     
     }
 int isDead(Personaggio a){
+
     if(a.vita < 1){
-       
-        return 1;
-        }else {
+		return 1;
+        }
+	else {
         return 0;
         }
         
     
     }
-    
 
-void movement(void){
+
+void movement(POS *position, Room stanze[DIM][DIM]){
+	fflush(stdin);
 	direzione = _getch();
-    fflush(stdin);
 
 	switch(direzione){
 		case 'w':
-			up();
+			move(position, 0, stanze);
             break;
 		case 's':
-			down();
+			move(position, 3, stanze);
             break;
 		case 'd':
-            right();
+			move(position, 2, stanze);
             break;
         case 'a':
-            left();
+			move(position, 1, stanze);
             break;
+		default:
+			break;
         }
+	system(clear);
+	showPos(stanze, *position);
 }
     
-void checkFight(Personaggio *nemico, Personaggio *eroe){
-	
-    if(thereIsEnemy == 1){
-        system(clear); //clear su osx e cls su win
-        printf("\nIn questa stanza e' presente %s...", nemico->nome);
-        if(nemico->vita > 1){
-            printf("che non ha buone intenzioni\n\n");
-            startFIght(nemico, *eroe);
-            
-            }
-		else{
-                printf("che e' in fin di vita,\n e ti lascia proseguire\n\n");
-                }
-        }
-    if(thereIsEnemy == 2 && flagFazio == 1){
-        printf("\nIn questa stanza e' presente il Prof. Fazio che ti Regala 50HP!\n");
-       flagFazio = 0;
-        eroe->vita += 50;
-        showStat(*eroe);
-        
-        }
-	if(thereIsEnemy == 3 && flagVincent == 1){
-        printf("\nIn questa stanza e' presente Vincent che ti porta nel suo ufficio\n"
-					"...per parlare\n");
-       flagVincent = 0;
-		currentPosition = 44;
-        
-        }
-    }
+void checkFight(Room room, Personaggio *eroe){
+	switch (room.enemy) {
+		case 1:
+			printf("\nIn questa stanza e' presente la Cusimano ");
+			if (flagCusy == 1){
+				printf("che non ha buone intenzioni.\n\n");
+				Personaggio Cusimano;
+				Cusimano.nome = "La Cusimano";
+				generaStat(&Cusimano);
+				Cusimano.vita = 100;
+				startFIght(&Cusimano, *eroe);
+				flagCusy = 0;
+			}
+			else{
+				printf("che e' in fin di vita,\n e ti lascia proseguire\n\n");
+			}
+			break;
+		case 2:   
+			if (flagFazio == 1){
+				printf("\nIn questa stanza e' presente il Prof. Fazio che ti Regala 50HP!\n");
+				flagFazio = 0;
+			    eroe->vita += 50;
+			    showStat(*eroe);
+				getchar();
+				}
+			break;
+		case 3:
+			if (flagVincent == 1){
+				char ans;
+				int luck;
+				printf("\nIn questa stanza e' presente la Stagliano' che ti chiede di seguirla nel suo ufficio\n"
+					"...per parlare...\n"
+					"Vuoi seguirla? (S/N)");
+				scanf("%c", &ans);
+				if (ans == 'S' || ans == 's'){
+					luck = rand() % 2;
+					switch (luck) {
+					case 0:
+						system(clear);
+						getchar();
+						printf("...");
+						getchar();
+						printf("\nSi sentono dei gemiti...");
+						getchar();
+						printf("\nVai via soddisfatto e con 50 HP in piu'!");
+						eroe->vita += 50;
+						getchar();
+						break;
+					case 1:
+						system(clear);
+						printf("La Stagliano' chiude la porta a chiave...");
+						getchar();
+						printf("\n...");
+						getchar();
+						printf("\nOh no! La Stagliano' in realta' e' Vincent! E adesso siete soli, chiusi nel suo ufficio!");
+						getchar();
+						printf("\nVai via con 25 HP in meno ed uno strano dolore al fondoschiena!");
+						eroe->vita -= 25;
+						getchar();
+						break;
+					default:
+						break;
+					}
+				}
+			}
+			fflush(stdin);
+			system(clear);
+			flagVincent = 0;
+			break; //case 3
+		default:
+			break;
+			        
+	}		// Switch principale
+}	//Chiusura funzione
     
 void startFIght(Personaggio *nemico, Personaggio eroe){
     char a;
@@ -130,10 +180,9 @@ void startFIght(Personaggio *nemico, Personaggio eroe){
            attack(eroe, nemico);
         }
     
-    attack(*nemico, &eroe);
+		attack(*nemico, &eroe);
     }
-    if(isDead(eroe)){
-        
+    if(isDead(eroe)){        
 		printf("HAI PERSO miseramente\n");
 		getchar();  //tipo system(pause)
         exit(0);

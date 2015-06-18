@@ -1,7 +1,8 @@
-Debug/source_game.c.o: source/game.c type.h azioni.h mappa.h
+Debug/source_game.c.o: source/game.c source/type.h source/azioni.h \
+ source/mappa.h
 
-type.h:
+source/type.h:
 
-azioni.h:
+source/azioni.h:
 
-mappa.h:
+source/mappa.h:

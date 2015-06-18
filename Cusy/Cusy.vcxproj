@@ -57,6 +57,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -69,7 +70,7 @@
     <ClCompile Include="..\source\game.c" />
     <ClCompile Include="..\source\main.c" />
     <ClCompile Include="..\source\mappa.c" />
-    <ClCompile Include="..\source\system.c" />
+    <ClCompile Include="..\source\maze.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\azioni.h" />

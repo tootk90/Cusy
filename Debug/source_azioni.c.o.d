@@ -1,7 +1,10 @@
-Debug/source_azioni.c.o: source/azioni.c azioni.h type.h mappa.h
+Debug/source_azioni.c.o: source/azioni.c source/azioni.h source/type.h \
+ source/mappa.h source/system.h
 
-azioni.h:
+source/azioni.h:
 
-type.h:
+source/type.h:
 
-mappa.h:
+source/mappa.h:
+
+source/system.h:

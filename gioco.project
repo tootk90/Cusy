@@ -101,6 +101,7 @@
     <File Name="source/game.h"/>
     <File Name="source/mappa.h"/>
     <File Name="source/type.h"/>
+    <File Name="source/maze.c"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
