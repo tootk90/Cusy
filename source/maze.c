@@ -18,6 +18,7 @@
 		for(j=0; j<DIM; j++){
 			stanze[i][j].visited = 0;		//resetta tutti i muri e le zone gia generate
 			stanze[i][j].walkable = 0;
+			stanze[i][j].enemy = -1;
 			}
 			
 		}
@@ -26,7 +27,7 @@
 	
 
 
-void closeMaze1(Room stanze[DIM][DIM]){		//crea i muri del contorno
+void closeMaze(Room stanze[DIM][DIM]){		//crea i muri del contorno
 	int i;
 	for (i = 0; i <= DIM; i++){
 		stanze[i][0].walkable = 2;	//asegna il valore 2 per distinguerlo dal valore dei muri interni
@@ -78,16 +79,16 @@ void generateMazeAlg(Room stanze[DIM][DIM]){
 		
 		stanze[y][x].visited = 1;		//imposto la cella attuale come generata e visitata
 		
-		if(stanze[y-2][x].walkable == 0 && stanze[y-1][x].visited == 0){		//controlli che guardano le celle adiacenti
+		if(stanze[y-1][x].walkable == 0 && stanze[y-1][x].visited == 0){		//controlli che guardano le celle adiacenti
 			ufree = 0;															//se sono percorribili e non visitati da 0
 			}
-		if(stanze[y+2][x].walkable == 0 && stanze[y+1][x].visited == 0){
+		if(stanze[y+1][x].walkable == 0 && stanze[y+1][x].visited == 0){
 			dfree = 0;
 			}
-		if(stanze[y][x+2].walkable == 0 && stanze[y][x+1].visited == 0){
+		if(stanze[y][x+1].walkable == 0 && stanze[y][x+1].visited == 0){
 			rfree = 0;
 			}	
-		if(stanze[y][x-2].walkable == 0 && stanze[y][x-1].visited == 0){
+		if(stanze[y][x-1].walkable == 0 && stanze[y][x-1].visited == 0){
 			lfree = 0;
 			}
 	
@@ -139,7 +140,7 @@ void generateMazeAlg(Room stanze[DIM][DIM]){
 			y++;
 			}else{
 					
-					y--;		//in tal caso di sposta verso il basso
+					y++;		//in tal caso di sposta verso il basso
 			}
 		}
 		if(y == DIM-1 || x == DIM-1){			//se raggiunge uno dei bordi smette di generare la mappa

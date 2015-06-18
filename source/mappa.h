@@ -17,10 +17,10 @@
 	void generateMazeAlg(Room stanze[DIM][DIM]);
 	void stabilizeMap(Room stanze[DIM][DIM]);
 	void resetMaze (Room stanze[DIM][DIM]);
-	void closeMaze1(Room stanze[DIM][DIM]);
-	void GenerateEnemies();
+	void closeMaze(Room stanze[DIM][DIM]);
+	void GenerateEnemies(Room stanze[DIM][DIM]);
 	
-	bool CheckMaze(Room stanze[10][10]);
+	bool CheckMaze(Room stanze[DIM][DIM]);
 
 
 	//void GenerateMaze(Room [10][10]);

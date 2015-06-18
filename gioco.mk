@@ -6,7 +6,7 @@
 ProjectName            :=gioco
 ConfigurationName      :=Debug
 WorkspacePath          := "C:\Users\salvatore\OneDrive\dev\programmi_c"
-ProjectPath            := "C:\Users\salvatore\Desktop\dev\Cusy"
+ProjectPath            := "C:\Users\salvatore\Documents\GitHub\Cusy"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -90,7 +90,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/source_azioni.c$(ObjectSuffix): source/azioni.c $(IntermediateDirectory)/source_azioni.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/azioni.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/azioni.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_azioni.c$(DependSuffix): source/azioni.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_azioni.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_azioni.c$(DependSuffix) -MM "source/azioni.c"
 
@@ -98,7 +98,7 @@ $(IntermediateDirectory)/source_azioni.c$(PreprocessSuffix): source/azioni.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_azioni.c$(PreprocessSuffix) "source/azioni.c"
 
 $(IntermediateDirectory)/source_game.c$(ObjectSuffix): source/game.c $(IntermediateDirectory)/source_game.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/game.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_game.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/game.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_game.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_game.c$(DependSuffix): source/game.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_game.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_game.c$(DependSuffix) -MM "source/game.c"
 
@@ -106,7 +106,7 @@ $(IntermediateDirectory)/source_game.c$(PreprocessSuffix): source/game.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_game.c$(PreprocessSuffix) "source/game.c"
 
 $(IntermediateDirectory)/source_main.c$(ObjectSuffix): source/main.c $(IntermediateDirectory)/source_main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_main.c$(DependSuffix): source/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_main.c$(DependSuffix) -MM "source/main.c"
 
@@ -114,7 +114,7 @@ $(IntermediateDirectory)/source_main.c$(PreprocessSuffix): source/main.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_main.c$(PreprocessSuffix) "source/main.c"
 
 $(IntermediateDirectory)/source_mappa.c$(ObjectSuffix): source/mappa.c $(IntermediateDirectory)/source_mappa.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/mappa.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/mappa.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_mappa.c$(DependSuffix): source/mappa.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_mappa.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_mappa.c$(DependSuffix) -MM "source/mappa.c"
 
@@ -122,7 +122,7 @@ $(IntermediateDirectory)/source_mappa.c$(PreprocessSuffix): source/mappa.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_mappa.c$(PreprocessSuffix) "source/mappa.c"
 
 $(IntermediateDirectory)/source_system.c$(ObjectSuffix): source/system.c $(IntermediateDirectory)/source_system.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/system.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_system.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/system.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_system.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_system.c$(DependSuffix): source/system.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_system.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_system.c$(DependSuffix) -MM "source/system.c"
 
@@ -130,7 +130,7 @@ $(IntermediateDirectory)/source_system.c$(PreprocessSuffix): source/system.c
 	@$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/source_system.c$(PreprocessSuffix) "source/system.c"
 
 $(IntermediateDirectory)/source_maze.c$(ObjectSuffix): source/maze.c $(IntermediateDirectory)/source_maze.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/salvatore/Desktop/dev/Cusy/source/maze.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_maze.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/salvatore/Documents/GitHub/Cusy/source/maze.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/source_maze.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/source_maze.c$(DependSuffix): source/maze.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/source_maze.c$(ObjectSuffix) -MF$(IntermediateDirectory)/source_maze.c$(DependSuffix) -MM "source/maze.c"
 

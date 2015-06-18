@@ -14,10 +14,15 @@ void game()
 	Personaggio eroe, nemico;
 	
 	struct position coord = { 1, 1 };
+	
 	resetMaze(stanze);
-	closeMaze1(stanze);
+	closeMaze(stanze);
 	generateMazeAlg(stanze);
+	closeMaze(stanze);
+	stabilizeMap(stanze);
 	PrintMazes(stanze);
+	GenerateEnemies(stanze);
+	
 	generaStat(&eroe);
 	printf("Inserisci il nome del tuo eroe : ");
 	eroe.nome = malloc(20 * sizeof(char));
@@ -43,7 +48,7 @@ void game()
 
 	movement(&coord, stanze);   
 	showRoom(stanze[coord.x][coord.y]);
-	GenerateEnemies();
+	
     checkFight(&nemico, &eroe);
 
     if(currentPosition == 13){
