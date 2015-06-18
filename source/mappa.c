@@ -48,14 +48,14 @@ bool CheckMaze(Room stanze[DIM][DIM]){
 
 
 	/*-- ASSEGNIAMO A TUTTE LE CELLE DELLA MATRICE IL VALORE -1 --*/
-	for (x = 0; x < DIM; x++){
-		for (y = 0; y < DIM; y++){
-			rooms[x][y] = -1;
+	for (y = 0; y < DIM; y++){
+		for (x = 0; x < DIM; x++){
+			rooms[y][x] = -1;
 		}
 	}
 
 	/*-- ASSEGNIAMO IL VALORE 0 ALLA CASELLA DI INIZIO -- */
-	rooms[x][y] = n;
+	rooms[y][x] = n;
 	n++;
 
 	while (rooms[8][8] == -1 ){		// SE LA CASELLA DI USCITA NON VIENE RAGGIUNTA IL CICLO CONTINUA
@@ -65,20 +65,20 @@ bool CheckMaze(Room stanze[DIM][DIM]){
 
 				if (rooms[x][y] == n) {
 
-					if (stanze[x + 1][y].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO CASELLA A DESTRA
-						rooms[x + 1][y] = last + 1;
+					if (stanze[y + 1][x].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO CASELLA IN BASSO
+						rooms[y + 1][x] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x - 1][y].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO CASELLA A SINISTRA
-						rooms[x - 1][y] = last + 1;
+					if (stanze[y - 1][x].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO CASELLA IN ALTO
+						rooms[y - 1][x] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x][y + 1].walkable == 1 && rooms[x + 1][y] == -1 ){	//  CONTROLLO IN BASSO
-						rooms[x][y + 1] = last + 1;
+					if (stanze[y][x + 1].walkable == 1 && rooms[y + 1][x] == -1 ){	//  CONTROLLO A DESTRA
+						rooms[y][x + 1] = last + 1;
 						n = last + 1;
 					}
-					if (stanze[x][y - 1].walkable == 1 && rooms[x + 1][y] == -1){	//  CONTROLLO IN ALTO
-						rooms[x][y - 1] = last + 1;
+					if (stanze[y][x - 1].walkable == 1 && rooms[y + 1][x] == -1){	//  CONTROLLO A SINISTRA
+						rooms[y][x - 1] = last + 1;
 						n = last + 1;
 					}
 
@@ -102,28 +102,28 @@ void move(POS *attuale, int dir, Room stanze[DIM][DIM]){
 
 	switch (dir) {
 		case 0:  //up
-			if (stanze[x][y - 1].walkable == 1) {
+			if (stanze[y-1][x].walkable == 1) {
 				(*attuale).y -= 1;
 			}
 			else
 				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 1:  //left
-			if (stanze[x-1][y].walkable == 1) {
+			if (stanze[y][x-1].walkable == 1) {
 				(*attuale).x -= 1;
 			}
 			else
 				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 2:  //right
-			if (stanze[x+1][y].walkable == 1) {
+			if (stanze[y][x+1].walkable == 1) {
 				(*attuale).x += 1;
 			}
 			else
 				printf("\nDi fronte a te c'e' un muro!");
 			break;
 		case 3:  //down
-			if ((stanze)[x][y+1].walkable == 1) {
+			if ((stanze)[y+1][x].walkable == 1) {
 				(*attuale).y += 1;
 			}
 			else
