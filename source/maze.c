@@ -175,12 +175,12 @@ void showPos(Room stanze[DIM][DIM], POS pos){	//stampa la posizione del giocator
 		for (h = x-5; h < x+5; h++){
 			if(stanze[i][h].walkable == 1){	//stampa 0 per muri e 1 per le stanze
 				if(i == y && h == x){
-					printf("x");
+					printf("%c", 167);
 					continue;
 					}
 				printf(" ");
 				}else{
-					printf("%c",178 );
+					printf("%c", 219);
 					}
 			}
 	printf("\n");
