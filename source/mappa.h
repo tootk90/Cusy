@@ -2,7 +2,7 @@
 #define MAPPA_H
     #include "type.h"
 
-	#define DIM 10
+	#define DIM 50
     
 	extern int currentPosition;
     extern int thereIsEnemy;
@@ -12,14 +12,18 @@
 	void move(POS *pos, int dir, Room stanze[DIM][DIM]);
     void describe(Room room);
     void showRoom(Room room);
-	void GenerateMaze(Room stanze[DIM][DIM]);
-	
+	void PrintMazes(Room stanze[DIM][DIM]);
+//	void GenerateMaze(Room stanze[DIM][DIM]);
+	void generateMazeAlg(Room stanze[DIM][DIM]);
+	void stabilizeMap(Room stanze[DIM][DIM]);
+	void resetMaze (Room stanze[DIM][DIM]);
+	void closeMaze1(Room stanze[DIM][DIM]);
 	void GenerateEnemies();
 	
 	bool CheckMaze(Room stanze[10][10]);
 
 
-	void GenerateMaze(Room [10][10]);
+	//void GenerateMaze(Room [10][10]);
 
-	Room stanze[10][10];
+	Room stanze[DIM][DIM];
 #endif

@@ -11,7 +11,8 @@
     
     typedef struct room{
         char *name;
-		bool walkable;
+		int walkable;
+		int visited;
 		int enemy;
         
         } Room;

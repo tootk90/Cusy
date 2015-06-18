@@ -1,24 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define DIM  50 // dimensione lato mappa (consigliato 50)
+#include "type.h"
+#include "mappa.h"
+
+//#define DIM  50 // dimensione lato mappa (consigliato 50)
 
 
 
-   typedef struct room{		//struttura stanza provvisoria
-      	int walkable;		
-		int visited;
-		        
-        } Room;
+ 
 
 	
-	void resetMazes(Room array[DIM][DIM]){ //reset mappa
+	void resetMaze(Room stanze[DIM][DIM]){ //reset mappa
 	int i,j;
 	
 	for (i=0; i<DIM;i++){
 		for(j=0; j<DIM; j++){
-			array[i][j].visited = 0;		//resetta tutti i muri e le zone gia generate
-			array[i][j].walkable = 0;
+			stanze[i][j].visited = 0;		//resetta tutti i muri e le zone gia generate
+			stanze[i][j].walkable = 0;
 			}
 			
 		}
@@ -43,11 +42,11 @@ void closeMaze1(Room stanze[DIM][DIM]){		//crea i muri del contorno
 		}
 }
 		
-void PrintMazes(Room rooms[DIM][DIM]){		//stampa la mastrice a schermo
+void PrintMazes(Room stanze[DIM][DIM]){		//stampa la mastrice a schermo
 	int i, h;
 	for (i = 0; i < DIM; i++){
 		for (h = 0; h < DIM; h++){
-			if(rooms[i][h].visited == 0){	//stampa 0 per muri e 1 per le stanze
+			if(stanze[i][h].visited == 0){	//stampa 0 per muri e 1 per le stanze
 				printf("0");
 				}else{
 					printf("1");
@@ -61,11 +60,11 @@ void PrintMazes(Room rooms[DIM][DIM]){		//stampa la mastrice a schermo
 
 
 
-void generateMaze(Room room[DIM][DIM]){
+void generateMazeAlg(Room stanze[DIM][DIM]){
 
 	int x = 1;			//setto coordinate di partenza
 	int y = 1;	
-	int oldx, oldy;	//variabili che mi registrano la posizione precedente
+//	int oldx = -1, oldy = -1;	//variabili che mi registrano la posizione precedente
 	srand(time(NULL));	//seed di rand
 	
 	while(1){	//ciclo che si interrompe quando la mappa è stata generata
@@ -77,18 +76,18 @@ void generateMaze(Room room[DIM][DIM]){
 														// 1== non libere
 		int done = 1;	//flag che interrompe il prossimo ciclo while
 		
-		room[y][x].visited = 1;		//imposto la cella attuale come generata e visitata
+		stanze[y][x].visited = 1;		//imposto la cella attuale come generata e visitata
 		
-		if(room[y-2][x].walkable == 0 && room[y-1][x].visited == 0){		//controlli che guardano le celle adiacenti
+		if(stanze[y-2][x].walkable == 0 && stanze[y-1][x].visited == 0){		//controlli che guardano le celle adiacenti
 			ufree = 0;															//se sono percorribili e non visitati da 0
 			}
-		if(room[y+2][x].walkable == 0 && room[y+1][x].visited == 0){
+		if(stanze[y+2][x].walkable == 0 && stanze[y+1][x].visited == 0){
 			dfree = 0;
 			}
-		if(room[y][x+2].walkable == 0 && room[y][x+1].visited == 0){
+		if(stanze[y][x+2].walkable == 0 && stanze[y][x+1].visited == 0){
 			rfree = 0;
 			}	
-		if(room[y][x-2].walkable == 0 && room[y][x-1].visited == 0){
+		if(stanze[y][x-2].walkable == 0 && stanze[y][x-1].visited == 0){
 			lfree = 0;
 			}
 	
@@ -97,33 +96,33 @@ void generateMaze(Room room[DIM][DIM]){
 			switch (dir){
 				case 0:
 					if(ufree == 0){
-						oldy = y;
+					//	oldy = y;
 						y--;
-						//room[oldy][x+1].walkable = 1;	//tentativo fallito di creare dei muri
+						//stanze[oldy][x+1].walkable = 1;	//tentativo fallito di creare dei muri
 						done = 0;
 						break;
 						}
 				case 1:
 					if(dfree == 0){
-						oldy = y;
+					//	oldy = y;
 						y++;
-						//room[oldy][x+1].walkable = 1;
+						//stanze[oldy][x+1].walkable = 1;
 						done = 0;
 						break;
 						}
 				case 2:
 					if(lfree == 0){
-						oldx = x;
+						//oldx = x;
 						x--;
-						//room[y-1][oldx].walkable = 1;
+						//stanze[y-1][oldx].walkable = 1;
 						done = 0;
 						break;
 						}
 				case 3:
 					if(rfree == 0){
-						oldx = x;
+					//	oldx = x;
 						x++;
-						//room[y+1][oldx].walkable = 1;
+						//stanze[y+1][oldx].walkable = 1;
 						done = 0;
 						break;
 						}
@@ -134,8 +133,8 @@ void generateMaze(Room room[DIM][DIM]){
 			}
 		if(ufree == 1 && dfree==1 && lfree==1 && rfree==1){	//nel caso in cui si ritrova in un loop
 		//	system("cls");	//pulisce lo schermo
-		//	PrintMazes(room);	//stampa la mappa attuale
-			if(room[y+1][x+1].walkable == 0){			//controlla se ha davanti un muro
+		//	PrintMazes(stanze);	//stampa la mappa attuale
+			if(stanze[y+1][x+1].walkable == 0){			//controlla se ha davanti un muro
 			x++;										//e si sposta in diagonale 
 			y++;
 			}else{
@@ -152,8 +151,18 @@ void generateMaze(Room room[DIM][DIM]){
 	
 	}
 
-
-
+void stabilizeMap(Room stanze[DIM][DIM]){
+	int i, h;
+	for (i = 0; i < DIM; i++){
+		for (h = 0; h < DIM; h++){
+			if(stanze[i][h].visited == 1){
+				stanze[i][h].walkable = 1;
+				}else{
+					stanze[i][h].walkable = 0;
+					}
+			}
+		}
+}
 
 //-----------------------------------------------------------
 
